@@ -4,11 +4,13 @@ module Virtus
 
     def self.new(parent = nil, attributes = [])
       Module.new.tap do |m|
-        m.extend(Implementation)
-        m.instance_variable_set('@parent', parent)
-        m.instance_variable_set('@attributes', attributes)
-        m.instance_variable_set('@index', {})
-        m.send(:reset)
+        m.module_eval do
+          extend Implementation
+          @parent = parent
+          @attributes = attributes
+          @index = {}
+          reset
+        end
       end
     end
 

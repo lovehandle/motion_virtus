@@ -5,11 +5,13 @@ module Virtus
 
     def self.new(name, keys = [])
       Module.new.tap do |m|
-        m.extend(Implementation)
-        m.instance_variable_set('@name', name)
-        m.instance_variable_set('@keys', keys)
-        m.send(:define_methods)
-        m.send(:include_comparison_methods)
+        m.module_eval do
+          extend Implementation
+          @name = name
+          @keys = keys
+          define_methods
+          include_comparison_methods
+        end
       end
     end
 
