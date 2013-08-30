@@ -1,0 +1,5 @@
+motion_require 'stubs/date'
+motion_require 'stubs/date_time'
+motion_require 'stubs/decimal'
+motion_require 'stubs/ostruct'
+motion_require 'stubs/set'

@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    motion_virtus (1.0.0.beta0)
+      motion-require
+
+PATH
+  remote: ~/Code/motion_coercible
+  specs:
+    motion_coercible (0.2.0)
+      motion-require
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    motion-require (0.0.7)
+    motion_descendants_tracker (0.0.2.2)
+      motion-require
+    rake (10.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  motion_coercible!
+  motion_descendants_tracker
+  motion_virtus!
+  rake
