@@ -87,6 +87,12 @@ module Virtus
         self
       end
 
+      def add(attribute, obj)
+        self[attribute.name] = attribute
+        attribute.define_accessor_methods(self, obj)
+        self
+      end
+
       # Get an attribute by name
       #
       # @example
@@ -137,9 +143,9 @@ module Virtus
       # @return [self]
       #
       # @api private
-      def define_reader_method(attribute, method_name, visibility)
+      def define_reader_method(obj, attribute, method_name, visibility)
         define_method(method_name) { attribute.get(self) }
-        send(visibility, method_name)
+        obj.send(visibility, method_name)
         self
       end
 
@@ -152,9 +158,9 @@ module Virtus
       # @return [self]
       #
       # @api private
-      def define_writer_method(attribute, method_name, visibility)
+      def define_writer_method(obj, attribute, method_name, visibility)
         define_method(method_name) { |value| attribute.set(self, value) }
-        send(visibility, method_name)
+        obj.send(visibility, method_name)
         self
       end
 
