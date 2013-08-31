@@ -243,9 +243,9 @@ module Virtus
     # @return [self]
     #
     # @api private
-    def define_accessor_methods(attribute_set, obj)
-      reader.define_method(accessor, attribute_set, obj)
-      writer.define_method(accessor, attribute_set, obj)
+    def define_accessor_methods(attribute_set)
+      reader.define_method(accessor, attribute_set)
+      writer.define_method(accessor, attribute_set)
       self
     end
 

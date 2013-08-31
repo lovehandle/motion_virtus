@@ -28,8 +28,8 @@ module Virtus
       # @return [self]
       #
       # @api private
-      def define_method(accessor, mod, obj)
-        mod.define_reader_method(obj, accessor, name, visibility)
+      def define_method(accessor, mod)
+        mod.define_reader_method(accessor, name, visibility)
         self
       end
 

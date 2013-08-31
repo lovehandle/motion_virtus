@@ -85,7 +85,7 @@ module Virtus
     #
     # @api private
     def virtus_add_attribute(attribute)
-      attribute_set.add(attribute, self)
+      attribute_set << attribute
     end
 
     # Merge default options

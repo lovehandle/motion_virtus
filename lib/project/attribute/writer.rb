@@ -62,8 +62,8 @@ module Virtus
       # @return [self]
       #
       # @api private
-      def define_method(accessor, mod, obj)
-        mod.define_writer_method(obj, accessor, name, visibility)
+      def define_method(accessor, mod)
+        mod.define_writer_method(accessor, name, visibility)
         self
       end
 
