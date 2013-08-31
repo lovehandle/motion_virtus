@@ -6,9 +6,9 @@ Gem::Specification.new do |spec|
   spec.version       = Virtus::VERSION
   spec.authors       = ["Ryan Closner"]
   spec.email         = ["ryan@ryanclosner.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{A RubyMotion port of virtus}
+  spec.summary       = spec.description
+  spec.homepage      = "http://github.com/rclosner/motion_virtus"
   spec.license       = ""
 
   files = []
@@ -20,5 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "motion-require"
+  spec.add_dependency "motion_coercible"
+  spec.add_dependency "motion_descendants_tracker"
   spec.add_development_dependency "rake"
 end

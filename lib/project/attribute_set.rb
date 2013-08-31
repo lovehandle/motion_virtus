@@ -1,5 +1,23 @@
 module Virtus
 
+  class AS
+    include Enumerable
+
+    def initialize(parent = nil, attributes = [])
+      @parent = parent
+      @attributes = attributes
+      @index = {}
+      reset
+    end
+
+  def each
+      return to_enum unless block_given?
+      @index.values.uniq.each { |attribute| yield attribute }
+      self
+    end
+
+  end
+
   module AttributeSet
 
     def self.new(parent = nil, attributes = [])
