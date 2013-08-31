@@ -1,4 +1,5 @@
 motion_require 'stubs.rb'
+motion_require 'support/descendants_tracker'
 motion_require 'support/equalizer'
 motion_require 'support/type_lookup'
 motion_require 'support/options'

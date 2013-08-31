@@ -21,6 +21,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "motion-require"
   spec.add_dependency "motion_coercible"
-  spec.add_dependency "motion_descendants_tracker"
   spec.add_development_dependency "rake"
 end
